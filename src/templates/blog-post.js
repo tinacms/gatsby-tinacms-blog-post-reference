@@ -22,9 +22,11 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <TinaButton primary onClick={() => setIsEditing(p => !p)}>
-          {isEditing ? "Preview" : "Edit"}
-        </TinaButton>
+        {process.env.NODE_ENV != "production" && (
+          <TinaButton primary onClick={() => setIsEditing(p => !p)}>
+            {isEditing ? "Preview" : "Edit"}
+          </TinaButton>
+        )}
         <article>
           <header>
             <h1
