@@ -81,7 +81,24 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default remarkForm(BlogPostTemplate)
+const BlogPostForm = {
+  fields: [
+    {
+      label: "Title",
+      name: "frontmatter.title",
+      description: "Enter the title of the post here",
+      component: "text",
+    },
+    {
+      label: "Description",
+      name: "frontmatter.description",
+      description: "Enter the post description",
+      component: "textarea",
+    },
+  ],
+}
+
+export default remarkForm(BlogPostTemplate, BlogPostForm)
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
