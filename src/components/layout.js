@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import { withPlugin } from "tinacms"
+import { RemarkCreatorPlugin } from "gatsby-tinacms-remark"
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -72,4 +74,21 @@ class Layout extends React.Component {
   }
 }
 
-export default Layout
+const CreateBlogPlugin = new RemarkCreatorPlugin({
+  label: "New Blog Post",
+  filename: form => {
+    return form.filename
+  },
+  fields: [
+    {
+      name: "filename",
+      component: "text",
+      label: "Filename",
+      placeholder: "content/blog/hello-world/index.md",
+      description:
+        "The full path to the new markdown file, relative to the repository root.",
+    },
+  ],
+})
+
+export default withPlugin(Layout, CreateBlogPlugin)
