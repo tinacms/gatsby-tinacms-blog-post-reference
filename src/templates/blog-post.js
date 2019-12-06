@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { remarkForm } from "gatsby-tinacms-remark"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -80,7 +81,7 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default remarkForm(BlogPostTemplate)
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -98,6 +99,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
+
+      ...TinaRemark
     }
   }
 `
