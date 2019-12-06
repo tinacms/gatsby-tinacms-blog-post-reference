@@ -1,7 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { remarkForm } from "gatsby-tinacms-remark"
-
+import { liveRemarkForm } from "gatsby-tinacms-remark"
+import { Wysiwyg } from "@tinacms/fields"
+import { TinaField } from "tinacms"
+import { Button as TinaButton } from "@tinacms/styles"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,6 +14,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const { isEditing, setIsEditing } = this.props
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -19,6 +22,9 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
+        <TinaButton primary onClick={() => setIsEditing(p => !p)}>
+          {isEditing ? "Preview" : "Edit"}
+        </TinaButton>
         <article>
           <header>
             <h1
@@ -39,7 +45,9 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
+            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          </TinaField>
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -98,7 +106,7 @@ const BlogPostForm = {
   ],
 }
 
-export default remarkForm(BlogPostTemplate, BlogPostForm)
+export default liveRemarkForm(BlogPostTemplate, BlogPostForm)
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
