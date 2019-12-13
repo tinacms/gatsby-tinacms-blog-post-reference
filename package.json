@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@tinacms/api-git": "^0.5.0-alpha.1",
     "gatsby": "^2.18.4",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-feed": "^2.3.22",
