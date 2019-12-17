@@ -1196,10 +1196,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tinacms/api-git@^0.5.0-alpha.0", "@tinacms/api-git@^0.5.0-alpha.1":
-  version "0.5.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@tinacms/api-git/-/api-git-0.5.0-alpha.1.tgz#fb18cce8391eb26637ce74c5681a9628081df8a9"
-  integrity sha512-W5xWS2QSPydHxNL9x/eiPivJy0+GxwBNrM0bISmsaWA7+utf6b5kirAyHh2JL9xHa7YrFbUO0go7RFBNKn0UzQ==
+"@tinacms/api-git@0.5.0-alpha.7":
+  version "0.5.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@tinacms/api-git/-/api-git-0.5.0-alpha.7.tgz#577e4b947a251e2df9bc4d093eb4399c8167117f"
+  integrity sha512-HrHSGrjLMXc1Ps1XxwK37CN1JCYlbMCnG44Edpw4FZGJ9Q/0pd9j/pbRxGQI/PWM3gDhPqFeyaeIwkgGRRS88A==
   dependencies:
     "@types/multer" "^1.3.10"
     cors "^2.8.5"
@@ -5923,12 +5923,12 @@ gatsby-telemetry@^1.1.40:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-tinacms-git@^0.2.15-alpha.0:
-  version "0.2.15-alpha.0"
-  resolved "https://registry.yarnpkg.com/gatsby-tinacms-git/-/gatsby-tinacms-git-0.2.15-alpha.0.tgz#dddb3ffd354dc7df412881dbc6ac86868384c423"
-  integrity sha512-jQHJo25Str46ZpF4gfdH+Kq158N5iV2/TB0t7hT5kpySMpoB+O/C5+LhBquFcUjdOvNcp2+1SsoGSu9HatYgcQ==
+gatsby-tinacms-git@0.2.15-alpha.7:
+  version "0.2.15-alpha.7"
+  resolved "https://registry.yarnpkg.com/gatsby-tinacms-git/-/gatsby-tinacms-git-0.2.15-alpha.7.tgz#4a22bdffe838c4f5a29257b4329156b9599c535c"
+  integrity sha512-zn28Za7SPdtO3q2DUuP/ympvShGuVpYfrtp7DhcCqWQctSSgBbiIkpU9LDnWbvJBr/z82rxutYxVy7wlIwgkpg==
   dependencies:
-    "@tinacms/api-git" "^0.5.0-alpha.0"
+    "@tinacms/api-git" "0.5.0-alpha.7"
     "@tinacms/core" "^0.5.0"
     "@tinacms/git-client" "^0.4.1"
     "@types/cors" "^2.8.5"
